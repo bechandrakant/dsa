@@ -1,4 +1,4 @@
-package BitManipulation;
+package BitManipulation.UniqueNumber;
 
 import org.junit.jupiter.api.Test;
 

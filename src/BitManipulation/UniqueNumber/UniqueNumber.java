@@ -1,4 +1,4 @@
-package BitManipulation;
+package BitManipulation.UniqueNumber;
 
 public class UniqueNumber {
     /**
