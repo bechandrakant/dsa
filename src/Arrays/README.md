@@ -6,3 +6,5 @@
 
 ### Pattern
 1. Frequency Counter Pattern
+2. Upper / Lower Triangle
+3. Iterate to half
