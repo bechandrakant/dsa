@@ -1,24 +1,24 @@
 ## Bit Manipulation
 
-### List of questions (11)
-- Add Numbers
-- CheckSetBit
-- CountSetBits
-- Minimum XOR
-- Unique Number
-- Unique Number 2
-- Unique Number 3
-- Missing Number
-- Missing Number 2
-- Power Of Two
-- Sum all XOR Pairs
-- Subset With Sum K
+### List of questions (12)
+1. Add Numbers
+1. CheckSetBit
+1. CountSetBits
+1. Minimum XOR
+1. Unique Number
+1. Unique Number 2
+1. Unique Number 3
+1. Missing Number
+1. Missing Number 2
+1. Power Of Two
+1. Sum all XOR Pairs
+1. Subset With Sum K
 
-### Patterns
-- Add numbers
-- XOR all array
-- Divide based on set bit
-- Count Set Bit
-- Check ith bit
-- Contribution of Bits
-- Consider all subset
+### Patterns (7)
+1. Add numbers
+1. XOR all array
+1. Divide based on set bit
+1. Count Set Bit
+1. Check ith bit
+1. Contribution of Bits
+1. Consider all subset
