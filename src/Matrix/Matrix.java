@@ -61,9 +61,17 @@ public class Matrix {
         if (A.length != B[0].length && A[0].length != B.length) {
             throw new IllegalArgumentException("Number of rows in A must be equal to columns in B and vice versa");
         }
+        int[][] result = new int[A.length][B[0].length];
 
-
-
-        return A;
+        for(int i = 0; i < A.length; i++) {
+            for (int j = 0; j < A.length; j++) {
+                int sum = 0;
+                for (int k = 0; k < B.length; k++) {
+                    sum += A[i][k] * B[k][j];
+                }
+                result[i][j] = sum;
+            }
+        }
+        return result;
     }
 }

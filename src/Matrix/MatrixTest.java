@@ -80,4 +80,23 @@ class MatrixTest {
             matrix.subtractMatrix(A, B);
         });
     }
+
+    @Test
+    void testMultiplyMatrix() {
+        int[][] A = {
+                {1, 2, 3},
+                {4, 5, 6}
+        };
+        int[][] B = {
+                {7, 8},
+                {9, 10},
+                {11, 12}
+        };
+        int[][] expected = {
+                {58, 64},
+                {139, 154}
+        };
+        int[][] actual = matrix.multiplyMatrix(A, B);
+        assertArrayEquals(expected, actual);
+    }
 }
