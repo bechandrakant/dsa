@@ -31,6 +31,9 @@ public class Matrix {
 
     public int[][] addMatrix(int[][] A, int[][] B) {
         // Check for dimensions
+        if (A.length != B.length || A[0].length != B[0].length) {
+            throw new IllegalArgumentException("Dimensions of both matrices must be same");
+        }
         int[][] result = new int[A.length][A[0].length];
         for (int i = 0; i < A.length; i++) {
             for (int j = 0; j < A[i].length; j++) {
@@ -42,6 +45,9 @@ public class Matrix {
 
     public int[][] subtractMatrix(int[][] A, int[][] B) {
         // Check for dimensions
+        if (A.length != B.length || A[0].length != B[0].length) {
+            throw new IllegalArgumentException("Dimensions of both matrices must be same");
+        }
         int[][] result = new int[A.length][A[0].length];
         for (int i = 0; i < A.length; i++) {
             for (int j = 0; j < A[i].length; j++) {
@@ -49,5 +55,15 @@ public class Matrix {
             }
         }
         return result;
+    }
+
+    public int[][] multiplyMatrix(int[][] A, int[][] B) {
+        if (A.length != B[0].length && A[0].length != B.length) {
+            throw new IllegalArgumentException("Number of rows in A must be equal to columns in B and vice versa");
+        }
+
+
+
+        return A;
     }
 }
