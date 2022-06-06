@@ -28,4 +28,15 @@ public class Matrix {
             System.out.println();
         }
     }
+
+    public int[][] addMatrix(int[][] A, int[][] B) {
+        // Check for dimensions
+        int[][] result = new int[A.length][A[0].length];
+        for (int i = 0; i < A.length; i++) {
+            for (int j = 0; j < A[i].length; j++) {
+                result[i][j] = A[i][j] + B[i][j];
+            }
+        }
+        return result;
+    }
 }
