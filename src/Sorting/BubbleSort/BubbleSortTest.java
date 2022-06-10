@@ -1,5 +1,6 @@
-package Sorting;
+package Sorting.BubbleSort;
 
+import Sorting.BubbleSort.BubbleSort;
 import org.junit.jupiter.api.Test;
 
 import static org.junit.jupiter.api.Assertions.*;
