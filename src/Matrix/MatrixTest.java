@@ -133,4 +133,38 @@ class MatrixTest {
         int[] expected = {7, 5, 3};
         assertArrayEquals(expected, matrix.getLtoRdiagonal(A));
     }
+
+    @Test
+    void testGetRtoLDiagonalSquareMatrix() {
+        int[][] A = {
+                {7, 8, 9},
+                {4, 5, 6},
+                {1, 2, 3}
+        };
+        int[] expected = {9, 5, 1};
+        assertArrayEquals(expected, matrix.getRtoLdiagonal(A));
+    }
+
+    @Test
+    void testGetRtoLDiagonalRectangleMatrix() {
+        int[][] A = {
+                {7, 8, 9},
+                {4, 5, 6},
+                {1, 2, 3},
+                {2, 2, 2},
+        };
+        int[] expected = {9, 5, 1};
+        assertArrayEquals(expected, matrix.getRtoLdiagonal(A));
+    }
+
+    @Test
+    void testGetRtoLDiagonalRectangleMatrix2() {
+        int[][] A = {
+                {7, 8, 9, 10},
+                {4, 5, 6, 11},
+                {1, 2, 3, 12}
+        };
+        int[] expected = {10, 6, 2};
+        assertArrayEquals(expected, matrix.getRtoLdiagonal(A));
+    }
 }

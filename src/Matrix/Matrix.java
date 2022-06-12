@@ -82,4 +82,13 @@ public class Matrix {
         }
         return diagonal;
     }
+
+    public int[] getRtoLdiagonal(int[][] matrix) {
+        int minLength = Math.min(matrix.length, matrix[0].length);
+        int[] diagonal = new int[minLength];
+        for (int i = 0; i < minLength; i++) {
+            diagonal[i] = matrix[i][matrix[0].length - i - 1];
+        }
+        return diagonal;
+    }
 }
