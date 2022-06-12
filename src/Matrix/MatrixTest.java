@@ -169,7 +169,7 @@ class MatrixTest {
     }
 
     @Test
-    void testAllLtoRDiagonalSquareMatrix() {
+    void testAllRtoLDiagonalSquareMatrix() {
         int[][] A = {
                 {7, 8, 9},
                 {4, 5, 6},
@@ -181,6 +181,63 @@ class MatrixTest {
                 {9, 5, 1},
                 {6, 2},
                 {3}
+        };
+        int[][] actual = matrix.allRtoLdiagonal(A);
+        assertArrayEquals(expected, actual);
+    }
+
+    @Test
+    void testAllRtoLDiagonalRectangleMatrix() {
+        int[][] A = {
+                {7, 8, 9, 10},
+                {4, 5, 6, 11},
+                {1, 2, 3, 12}
+        };
+        int[][] expected = {
+                {7},
+                {8, 4},
+                {9, 5, 1},
+                {10, 6, 2},
+                {11, 3},
+                {12}
+        };
+        int[][] actual = matrix.allRtoLdiagonal(A);
+        assertArrayEquals(expected, actual);
+    }
+
+    @Test
+    void testAllRtoLDiagonalRectangleMatrix2() {
+        int[][] A = {
+                {7, 8, 9},
+                {4, 5, 6},
+                {1, 2, 3},
+                {2, 2, 2},
+        };
+        int[][] expected = {
+                {7},
+                {8, 4},
+                {9, 5, 1},
+                {6, 2, 2},
+                {3, 2},
+                {2}
+        };
+        int[][] actual = matrix.allRtoLdiagonal(A);
+        assertArrayEquals(expected, actual);
+    }
+
+    @Test
+    void testAllLtoRDiagonalSquareMatrix() {
+        int[][] A = {
+                {7, 8, 9},
+                {4, 5, 6},
+                {1, 2, 3}
+        };
+        int[][] expected = {
+                {9},
+                {8, 6},
+                {7, 5, 3},
+                {4, 2},
+                {1}
         };
         int[][] actual = matrix.allLtoRdiagonal(A);
         assertArrayEquals(expected, actual);
@@ -194,12 +251,12 @@ class MatrixTest {
                 {1, 2, 3, 12}
         };
         int[][] expected = {
-                {7},
-                {8, 4},
-                {9, 5, 1},
-                {10, 6, 2},
-                {11, 3},
-                {12}
+                {10},
+                {9, 11},
+                {8, 6, 12},
+                {7, 5, 3},
+                {4, 2},
+                {1}
         };
         int[][] actual = matrix.allLtoRdiagonal(A);
         assertArrayEquals(expected, actual);
@@ -214,11 +271,11 @@ class MatrixTest {
                 {2, 2, 2},
         };
         int[][] expected = {
-                {7},
-                {8, 4},
-                {9, 5, 1},
-                {6, 2, 2},
-                {3, 2},
+                {9},
+                {8, 6},
+                {7, 5, 3},
+                {4, 2, 2},
+                {1, 2},
                 {2}
         };
         int[][] actual = matrix.allLtoRdiagonal(A);

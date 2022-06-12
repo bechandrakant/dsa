@@ -1,5 +1,7 @@
 package Matrix;
 
+import java.util.ArrayList;
+
 public class Matrix {
     public static void main(String[] args) {
         int[][] matrixInput = {
@@ -96,21 +98,39 @@ public class Matrix {
         int rows = matrix.length;
         int columns = matrix[0].length;
         int[][] diagonals = new int[rows + columns - 1][];
+        int diagonalsPointer = 0;
+        for (int index = columns - 1; index > (-1 * rows); index--) {
+            int i = index < 0 ? Math.abs(index): 0; // start position rows
+            int j = index < 0 ? 0: index; // start position columns
+
+            ArrayList<Integer> diagonal = new ArrayList<>();
+
+            while (i < rows && j < columns && i >= 0 && j >= 0) {
+                diagonal.add(matrix[i][j]);
+                i++;
+                j++;
+            }
+            diagonals[diagonalsPointer++] = diagonal.stream().mapToInt(ele -> ele).toArray();
+        }
+        return diagonals;
+    }
+
+    public int[][] allRtoLdiagonal(int[][] matrix) {
+        int rows = matrix.length;
+        int columns = matrix[0].length;
+        int[][] diagonals = new int[rows + columns - 1][];
         for (int indexSum = 0; indexSum < rows + columns - 1; indexSum++) {
             int i = indexSum < columns ? 0: indexSum - columns + 1; // start position rows
             int j = indexSum < columns ? indexSum: indexSum - i; // start position columns
 
-            int length = Math.min(rows - i, Math.min(indexSum + 1, columns));
-            int[] diagonal = new int[length];
+            ArrayList<Integer> diagonal = new ArrayList<>();
 
-            int k = 0;
             while (i < rows && j < columns && i >= 0 && j >= 0) {
-                diagonal[k] = matrix[i][j];
-                k++;
+                diagonal.add(matrix[i][j]);
                 i++;
                 j--;
             }
-            diagonals[indexSum] = diagonal;
+            diagonals[indexSum] = diagonal.stream().mapToInt(ele -> ele).toArray();
         }
         return diagonals;
     }
