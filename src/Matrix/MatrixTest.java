@@ -27,7 +27,6 @@ class MatrixTest {
         assertArrayEquals(expected, actual);
     }
 
-
     @Test
     void testAddMatrixUnequalDimensions() {
         int[][] A = {
@@ -279,6 +278,56 @@ class MatrixTest {
                 {2}
         };
         int[][] actual = matrix.allLtoRdiagonal(A);
+        assertArrayEquals(expected, actual);
+    }
+
+    @Test
+    void testTransposeSquareMatrix() {
+        int[][] A = {
+                {7, 8, 9},
+                {4, 5, 6},
+                {1, 2, 3}
+        };
+        int[][] expected = {
+                {7, 4, 1},
+                {8, 5, 2},
+                {9, 6, 3}
+        };
+        int[][] actual = matrix.transpose(A);
+        assertArrayEquals(expected, actual);
+    }
+
+    @Test
+    void testTransposeRectangleMatrix() {
+        int[][] A = {
+                {7, 8, 9, 10},
+                {4, 5, 6, 11},
+                {1, 2, 3, 12}
+        };
+        int[][] expected = {
+                {7, 4, 1},
+                {8, 5, 2},
+                {9, 6, 3},
+                {10, 11, 12}
+        };
+        int[][] actual = matrix.transpose(A);
+        assertArrayEquals(expected, actual);
+    }
+
+    @Test
+    void testTransposeRectangleMatrix2() {
+        int[][] A = {
+                {7, 8, 9},
+                {4, 5, 6},
+                {1, 2, 3},
+                {10, 11, 12}
+        };
+        int[][] expected = {
+                {7, 4, 1, 10},
+                {8, 5, 2, 11},
+                {9, 6, 3, 12}
+        };
+        int[][] actual = matrix.transpose(A);
         assertArrayEquals(expected, actual);
     }
 }
