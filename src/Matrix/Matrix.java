@@ -74,4 +74,12 @@ public class Matrix {
         }
         return result;
     }
+
+    public int[] getLtoRdiagonal(int[][] matrix) {
+        int[] diagonal = new int[Math.min(matrix.length, matrix[0].length)];
+        for (int i = 0; i < Math.min(matrix.length, matrix[0].length); i++) {
+            diagonal[i] = matrix[i][i];
+        }
+        return diagonal;
+    }
 }
