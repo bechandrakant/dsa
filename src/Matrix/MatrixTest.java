@@ -185,4 +185,43 @@ class MatrixTest {
         int[][] actual = matrix.allLtoRdiagonal(A);
         assertArrayEquals(expected, actual);
     }
+
+    @Test
+    void testAllLtoRDiagonalRectangleMatrix() {
+        int[][] A = {
+                {7, 8, 9, 10},
+                {4, 5, 6, 11},
+                {1, 2, 3, 12}
+        };
+        int[][] expected = {
+                {7},
+                {8, 4},
+                {9, 5, 1},
+                {10, 6, 2},
+                {11, 3},
+                {12}
+        };
+        int[][] actual = matrix.allLtoRdiagonal(A);
+        assertArrayEquals(expected, actual);
+    }
+
+    @Test
+    void testAllLtoRDiagonalRectangleMatrix2() {
+        int[][] A = {
+                {7, 8, 9},
+                {4, 5, 6},
+                {1, 2, 3},
+                {2, 2, 2},
+        };
+        int[][] expected = {
+                {7},
+                {8, 4},
+                {9, 5, 1},
+                {6, 2, 2},
+                {3, 2},
+                {2}
+        };
+        int[][] actual = matrix.allLtoRdiagonal(A);
+        assertArrayEquals(expected, actual);
+    }
 }
