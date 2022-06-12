@@ -167,4 +167,22 @@ class MatrixTest {
         int[] expected = {10, 6, 2};
         assertArrayEquals(expected, matrix.getRtoLdiagonal(A));
     }
+
+    @Test
+    void testAllLtoRDiagonalSquareMatrix() {
+        int[][] A = {
+                {7, 8, 9},
+                {4, 5, 6},
+                {1, 2, 3}
+        };
+        int[][] expected = {
+                {7},
+                {8, 4},
+                {9, 5, 1},
+                {6, 2},
+                {3}
+        };
+        int[][] actual = matrix.allLtoRdiagonal(A);
+        assertArrayEquals(expected, actual);
+    }
 }

@@ -91,4 +91,27 @@ public class Matrix {
         }
         return diagonal;
     }
+
+    public int[][] allLtoRdiagonal(int[][] matrix) {
+        int rows = matrix.length;
+        int columns = matrix[0].length;
+        int[][] diagonals = new int[rows + columns - 1][];
+        for (int indexSum = 0; indexSum < rows + columns - 1; indexSum++) {
+            int i = indexSum < columns ? 0: indexSum - columns + 1; // start position rows
+            int j = indexSum < columns ? indexSum: indexSum - i; // start position columns
+
+            int length = Math.min(rows - i, Math.min(indexSum + 1, columns));
+            int[] diagonal = new int[length];
+
+            int k = 0;
+            while (i < rows && j < columns && i >= 0 && j >= 0) {
+                diagonal[k] = matrix[i][j];
+                k++;
+                i++;
+                j--;
+            }
+            diagonals[indexSum] = diagonal;
+        }
+        return diagonals;
+    }
 }
