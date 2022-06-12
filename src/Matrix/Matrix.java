@@ -105,7 +105,7 @@ public class Matrix {
 
             ArrayList<Integer> diagonal = new ArrayList<>();
 
-            while (i < rows && j < columns && i >= 0 && j >= 0) {
+            while (i < rows && j < columns) {
                 diagonal.add(matrix[i][j]);
                 i++;
                 j++;
@@ -125,7 +125,7 @@ public class Matrix {
 
             ArrayList<Integer> diagonal = new ArrayList<>();
 
-            while (i < rows && j < columns && i >= 0 && j >= 0) {
+            while (i < rows && j >= 0) {
                 diagonal.add(matrix[i][j]);
                 i++;
                 j--;
