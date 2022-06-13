@@ -12,6 +12,7 @@
 9. Right to Left all diagonals
 10. Transpose
 11. Rotate 90 deg
+12. Spiral Matrix
 
 ### Pattern
 1. Row wise
@@ -21,3 +22,4 @@
 5. Diagonals
 6. Transpose
 7. Rotate
+8. Spiral Matrix
