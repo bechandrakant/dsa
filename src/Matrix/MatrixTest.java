@@ -330,4 +330,54 @@ class MatrixTest {
         int[][] actual = matrix.transpose(A);
         assertArrayEquals(expected, actual);
     }
+
+    @Test
+    void testRotate90degSquareMatrix() {
+        int[][] A = {
+                {7, 8, 9},
+                {4, 5, 6},
+                {1, 2, 3}
+        };
+        int[][] expected = {
+                {1, 4, 7},
+                {2, 5, 8},
+                {3, 6, 9}
+        };
+        int[][] actual = matrix.rotate90deg(A);
+        assertArrayEquals(expected, actual);
+    }
+
+    @Test
+    void testRotate90degRectangleMatrix() {
+        int[][] A = {
+                {7, 8, 9, 10},
+                {4, 5, 6, 11},
+                {1, 2, 3, 12}
+        };
+        int[][] expected = {
+                {1, 4, 7},
+                {2, 5, 8},
+                {3, 6, 9},
+                {12, 11, 10}
+        };
+        int[][] actual = matrix.rotate90deg(A);
+        assertArrayEquals(expected, actual);
+    }
+
+    @Test
+    void testRotate90degRectangleMatrix2() {
+        int[][] A = {
+                {7, 8, 9},
+                {4, 5, 6},
+                {1, 2, 3},
+                {10, 11, 12}
+        };
+        int[][] expected = {
+                {10, 1, 4, 7},
+                {11, 2, 5, 8},
+                {12, 3, 6, 9},
+        };
+        int[][] actual = matrix.rotate90deg(A);
+        assertArrayEquals(expected, actual);
+    }
 }

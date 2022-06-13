@@ -147,4 +147,19 @@ public class Matrix {
 
         return transposeMatrix;
     }
+
+    public int[][] rotate90deg(int[][] matrix) {
+        int[][] rotated = new Matrix().transpose(matrix);
+
+        // Swap rowwise
+        for (int i = 0; i < rotated.length; i++) {
+            for (int j = 0; j < rotated[i].length / 2; j++) {
+                int temp = rotated[i][j];
+                rotated[i][j] = rotated[i][rotated[i].length - j - 1];
+                rotated[i][rotated[i].length - j - 1] = temp;
+            }
+        }
+
+        return rotated;
+    }
 }
